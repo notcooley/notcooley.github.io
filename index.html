@@ -69,10 +69,51 @@
             border-radius: 5px;
         }
 
+        .nav-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '»';
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+            transform: translateX(-10px);
+        }
+
+        .nav-links a:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
         .nav-links a:hover {
             color: rgb(255, 255, 255);
             background-color: rgba(52, 152, 219, 0.1);
         }
+
+        .nav-links a:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        /* Hamburger Animation */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
 
         /* Dropdown Menu Styles */
         .dropdown {
@@ -340,6 +381,14 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
+
+            <!-- Hamburger Menu Button -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
             <a href="#intro" class="logo">Aidan Cooley</a>
             <ul class="nav-links">
                 <li><a href="#intro">Home</a></li>
@@ -512,6 +561,30 @@
             }
         });
     });
+    // Mobile Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+
+// Close menu when clicking on a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+    }
+});
 </script>
 </body>
 </html>
