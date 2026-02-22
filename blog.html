@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aidan Cooley - Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #e1dcdc;
+        }
+
+        /* Navigation */
+        nav {
+            background: #f18724;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 4rem 2rem;
+        }
+
+        .blog-header {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #e67763 0%, #eeaf6d 100%);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+        }
+
+        .blog-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-header p {
+            font-size: 1.2rem;
+        }
+
+        /* Blog Posts */
+        .blog-post {
+            background: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .blog-post-header {
+            border-bottom: 2px solid #f18724;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-post h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-meta {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-post-content {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-post-content p {
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            background: #f18724;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .read-more:hover {
+            background: #ff7b00;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #f18724;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+
+            .blog-post h2 {
+                font-size: 1.5rem;
+            }
+
+            main {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Aidan Cooley</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#coding">Coding</a></li>
+                <li><a href="index.html#writing">Writing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="resume.pdf" target="_blank">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Blog Header -->
+        <div class="blog-header">
+            <h1>My Blog</h1>
+            <p>Thoughts, tutorials, and experiences from my journey</p>
+        </div>
+
+        <!-- Blog Post 1 -->
+        <article class="blog-post">
+            <div class="blog-post-header">
+                <h2>Getting Started with Web Development</h2>
+                <div class="blog-meta">
+                    <span>📅 February 21, 2025</span>
+                    <span>⏱️ 5 min read</span>
+                    <span>✍️ Aidan Cooley</span>
+                </div>
+            </div>
+            <div class="blog-post-content">
+                <p>Learning web development can seem overwhelming at first, but with the right approach and resources, anyone can become proficient. In this post, I'll share my journey and the key lessons I've learned along the way.</p>
+                <p>When I first started, I made the mistake of trying to learn everything at once. HTML, CSS, JavaScript, React, Node.js - the list seemed endless. But I quickly realized that building a strong foundation is crucial...</p>
+            </div>
+            <div class="tags">
+                <span class="tag">Web Development</span>
+                <span class="tag">Beginner</span>
+                <span class="tag">Tutorial</span>
+            </div>
+            <a href="#" class="read-more">Read Full Post</a>
+        </article>
+
+        <!-- Blog Post 2 -->
+        <article class="blog-post">
+            <div class="blog-post-header">
+                <h2>My Experience with Machine Learning Projects</h2>
+                <div class="blog-meta">
+                    <span>📅 February 15, 2025</span>
+                    <span>⏱️ 8 min read</span>
+                    <span>✍️ Aidan Cooley</span>
+                </div>
+            </div>
+            <div class="blog-post-content">
+                <p>Machine learning has transformed how we approach problem-solving in technology. Over the past year, I've worked on several ML projects that taught me invaluable lessons about data preprocessing, model selection, and deployment.</p>
+                <p>One of my most challenging projects involved building a classification model for image recognition. The dataset was messy, the models were finicky, and debugging felt impossible at times...</p>
+            </div>
+            <div class="tags">
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Python</span>
+                <span class="tag">Project</span>
+            </div>
+            <a href="#" class="read-more">Read Full Post</a>
+        </article>
+
+        <!-- Blog Post 3 -->
+        <article class="blog-post">
+            <div class="blog-post-header">
+                <h2>Building My Portfolio Website</h2>
+                <div class="blog-meta">
+                    <span>📅 February 10, 2025</span>
+                    <span>⏱️ 6 min read</span>
+                    <span>✍️ Aidan Cooley</span>
+                </div>
+            </div>
+            <div class="blog-post-content">
+                <p>Creating a portfolio website is one of the best investments you can make as a developer. It's not just a showcase of your work - it's a reflection of your skills, personality, and attention to detail.</p>
+                <p>In this post, I'll walk you through my process of designing and building this very website you're looking at. From choosing the color scheme to implementing responsive design...</p>
+            </div>
+            <div class="tags">
+                <span class="tag">Portfolio</span>
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">Design</span>
+            </div>
+            <a href="#" class="read-more">Read Full Post</a>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Aidan Cooley. All rights reserved.</p>
+    </footer>
+</body>
+</html>
