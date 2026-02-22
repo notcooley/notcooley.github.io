@@ -11,14 +11,187 @@
             box-sizing: border-box;
         }
 
-        body {
+        :root {
+            /* Light Mode (Orange) */
+            --bg-color: #e1dcdc;
+            --nav-bg: #f18724;
+            --nav-text: #ecf0f1;
+            --nav-hover: #ffffff;
+            --text-color: #333;
+            --heading-color: #2c3e50;
+            --accent-color: #f18724;
+            --accent-hover: #ff7b00;
+            --intro-gradient-1: #e67763;
+            --intro-gradient-2: #eeaf6d;
+            --card-bg: white;
+            --border-accent: #f18724;
+            --footer-bg: #f18724;
+        }
+
+        body.dark-mode {
+            /* Dark Mode (Blue) */
+            --bg-color: #1a1f3a;
+            --nav-bg: #2c5aa0;
+            --nav-text: #a0d8f1;
+            --nav-hover: #00ffff;
+            --text-color: #e0e0e0;
+            --heading-color: #00d4ff;
+            --accent-color: #0088ff;
+            --accent-hover: #00aaff;
+            --intro-gradient-1: #1e3a8a;
+            --intro-gradient-2: #3b82f6;
+            --card-bg: #2a3555;
+            --border-accent: #0088ff;
+            --footer-bg: #2c5aa0;
+        }
+
+       
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            background: transparent;
+            border: 2px solid var(--nav-text);
+            color: var(--nav-text);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+         .dark-mode-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #e1dcdc;
         }
 
-        /* Navigation */
+        /*------------------------------------*/
+        body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav {
+    background: var(--nav-bg);
+    /* keep rest of properties */
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a {
+    color: var(--nav-text);
+    /* keep rest of properties */
+}
+
+.nav-links a:hover {
+    color: var(--nav-hover);
+    /* keep rest of properties */
+}
+
+.section h2 {
+    /* keep existing properties */
+    color: var(--heading-color);
+    border-bottom: 3px solid var(--border-accent);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+#intro {
+    background: linear-gradient(135deg, var(--intro-gradient-1) 0%, var(--intro-gradient-2) 100%);
+    /* keep rest of properties */
+    transition: background 0.3s ease;
+}
+
+.project-card {
+    background: var(--card-bg);
+    /* keep rest of properties */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.project-card h3 {
+    color: var(--heading-color);
+    /* keep rest of properties */
+    transition: color 0.3s ease;
+}
+
+.project-card p {
+    color: var(--text-color);
+    /* keep rest of properties */
+    transition: color 0.3s ease;
+}
+
+.project-link {
+    background: var(--accent-color);
+    /* keep rest of properties */
+}
+
+.project-link:hover {
+    background: var(--accent-hover);
+}
+
+.writing-item {
+    background: var(--card-bg);
+    /* keep rest of properties */
+    transition: background-color 0.3s ease;
+}
+
+.writing-item h3 {
+    color: var(--heading-color);
+    /* keep rest of properties */
+    transition: color 0.3s ease;
+}
+
+.misc-item {
+    background: var(--card-bg);
+    /* keep rest of properties */
+    transition: background-color 0.3s ease;
+}
+
+.misc-item h3 {
+    color: var(--heading-color);
+    /* keep rest of properties */
+    transition: color 0.3s ease;
+}
+
+.misc-item p {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.dropdown-content {
+    /* keep existing properties */
+    background-color: var(--nav-bg);
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a {
+    color: var(--nav-text) !important;
+    /* keep rest of properties */
+    transition: color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    color: var(--nav-hover) !important;
+    /* keep rest of properties */
+}
+
+footer {
+    background: var(--footer-bg);
+    /* keep rest of properties */
+    transition: background-color 0.3s ease;
+}
+
+
+        /* Navigation
         nav {
             background: #f18724;
             padding: 1rem 0;
@@ -166,10 +339,10 @@
             color: #2c3e50;
             border-bottom: 3px solid #f18724;
             padding-bottom: 0.5rem;
-        }
+        } */
 
-        /* Intro Section */
-        /* #intro {
+        /*Intro Section */
+         #intro {
             background-image: linear-gradient(rgba(241, 135, 36, 0.173), rgba(241, 135, 36, 0.8)), url('backdrop.jpeg');
             background-size: cover;
             background-position: center;
@@ -192,7 +365,7 @@
             max-width: 600px;
             margin: 0 auto;
             opacity: 0.95;
-        } */
+        }
 
         #intro {
             background-image: linear-gradient(rgba(241, 135, 36, 0), rgb(248, 120, 0)), url('backdrop.jpeg');
@@ -394,8 +567,14 @@
                 <a href="https://github.com/notcooley" target="_blank">GitHub</a>
                 <a href="https://wasatchmag.com/staff_name/aidan-cooley/" target="_blank">Wasatch Magazine</a>
                 <a href="https://www.youtube.com/@aidancooley7991" target="_blank">YouTube Channel</a>
-    </div>
-</li>
+                    </div>
+                </li>
+                <li>
+                    <button class="dark-mode-toggle" id="darkModeToggle">
+                        <span id="modeIcon">🌙</span>
+                        <span id="modeText">Dark</span>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -496,8 +675,34 @@
         <p>Contact me anytime: 4idan.cooley@gmail.com </p>
     </footer>
 
+<script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const modeIcon = document.getElementById('modeIcon');
+        const modeText = document.getElementById('modeText');
+        const body = document.body;
 
-    <script>
+        // Check for saved preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            modeIcon.textContent = '☀️';
+            modeText.textContent = 'Light';
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                modeIcon.textContent = '☀️';
+                modeText.textContent = 'Light';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                modeIcon.textContent = '🌙';
+                modeText.textContent = 'Dark';
+                localStorage.setItem('darkMode', null);
+            }
+        });
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -545,14 +750,19 @@
                 current = lastSection.getAttribute('id');
             }
         }
+        // navLinks.forEach(link => {
+        //     link.style.color = '#ecf0f1';
+        //     if (link.getAttribute('href') === '#' + current) {
+        //         link.style.color = '#993300'; // Dark orange color
+        //     }
 
         navLinks.forEach(link => {
-            link.style.color = '#ecf0f1';
-            if (link.getAttribute('href') === '#' + current) {
-                link.style.color = '#993300'; // Dark orange color
-            }
+                link.style.color = '';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.color = body.classList.contains('dark-mode') ? '#00ffff' : '#993300';
+                }
+            });
         });
-    });
     // Mobile Menu Toggle
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
@@ -577,6 +787,8 @@ document.addEventListener('click', (e) => {
         navLinks.classList.remove('active');
     }
 });
+
+
 </script>
 </body>
 </html>
