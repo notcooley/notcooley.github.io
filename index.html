@@ -21,8 +21,7 @@
             --heading-color: #2c3e50;
             --accent-color: #f18724;
             --accent-hover: #ff7b00;
-            --intro-gradient-1: #e67763;
-            --intro-gradient-2: #eeaf6d;
+            --intro-gradient: rgba(241, 135, 36, 0.8);
             --card-bg: white;
             --border-accent: #f18724;
             --footer-bg: #f18724;
@@ -38,14 +37,20 @@
             --heading-color: #00d4ff;
             --accent-color: #0088ff;
             --accent-hover: #00aaff;
-            --intro-gradient-1: #1e3a8a;
-            --intro-gradient-2: #3b82f6;
+            --intro-gradient: rgba(30, 58, 138, 0.8);
             --card-bg: #2a3555;
             --border-accent: #0088ff;
             --footer-bg: #2c5aa0;
         }
 
-       
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
         /* Dark Mode Toggle */
         .dark-mode-toggle {
             background: transparent;
@@ -61,145 +66,21 @@
             gap: 0.5rem;
         }
 
-         .dark-mode-toggle:hover {
+        .dark-mode-toggle:hover {
             background: rgba(255, 255, 255, 0.1);
             transform: scale(1.05);
         }
 
-         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #e1dcdc;
-        }
-
-        /*------------------------------------*/
-        body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-nav {
-    background: var(--nav-bg);
-    /* keep rest of properties */
-    transition: background-color 0.3s ease;
-}
-
-.nav-links a {
-    color: var(--nav-text);
-    /* keep rest of properties */
-}
-
-.nav-links a:hover {
-    color: var(--nav-hover);
-    /* keep rest of properties */
-}
-
-.section h2 {
-    /* keep existing properties */
-    color: var(--heading-color);
-    border-bottom: 3px solid var(--border-accent);
-    transition: color 0.3s ease, border-color 0.3s ease;
-}
-
-#intro {
-    background: linear-gradient(135deg, var(--intro-gradient-1) 0%, var(--intro-gradient-2) 100%);
-    /* keep rest of properties */
-    transition: background 0.3s ease;
-}
-
-.project-card {
-    background: var(--card-bg);
-    /* keep rest of properties */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-.project-card h3 {
-    color: var(--heading-color);
-    /* keep rest of properties */
-    transition: color 0.3s ease;
-}
-
-.project-card p {
-    color: var(--text-color);
-    /* keep rest of properties */
-    transition: color 0.3s ease;
-}
-
-.project-link {
-    background: var(--accent-color);
-    /* keep rest of properties */
-}
-
-.project-link:hover {
-    background: var(--accent-hover);
-}
-
-.writing-item {
-    background: var(--card-bg);
-    /* keep rest of properties */
-    transition: background-color 0.3s ease;
-}
-
-.writing-item h3 {
-    color: var(--heading-color);
-    /* keep rest of properties */
-    transition: color 0.3s ease;
-}
-
-.misc-item {
-    background: var(--card-bg);
-    /* keep rest of properties */
-    transition: background-color 0.3s ease;
-}
-
-.misc-item h3 {
-    color: var(--heading-color);
-    /* keep rest of properties */
-    transition: color 0.3s ease;
-}
-
-.misc-item p {
-    color: var(--text-color);
-    transition: color 0.3s ease;
-}
-
-.dropdown-content {
-    /* keep existing properties */
-    background-color: var(--nav-bg);
-    transition: background-color 0.3s ease;
-}
-
-.dropdown-content a {
-    color: var(--nav-text) !important;
-    /* keep rest of properties */
-    transition: color 0.3s ease;
-}
-
-.dropdown-content a:hover {
-    color: var(--nav-hover) !important;
-    /* keep rest of properties */
-}
-
-footer {
-    background: var(--footer-bg);
-    /* keep rest of properties */
-    transition: background-color 0.3s ease;
-}
-
-
-        /* Navigation
+        /* Navigation */
         nav {
-            background: #f18724;
+            background: var(--nav-bg);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease;
         }
 
         .nav-container {
@@ -222,18 +103,11 @@ footer {
             display: flex;
             list-style: none;
             gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
-            color: #ecf0f1;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-
-        .nav-links a {
-            color: #ecf0f1;
+            color: var(--nav-text);
             text-decoration: none;
             transition: color 0.3s ease, transform 0.3s ease;
             padding: 0.5rem 1rem;
@@ -255,16 +129,27 @@ footer {
         }
 
         .nav-links a:hover {
-            color: rgb(255, 255, 255);
+            color: var(--nav-hover);
             background-color: rgba(52, 152, 219, 0.1);
         }
 
-        .nav-links a:hover {
-            color: rgb(255, 255, 255);
-            background-color: rgba(52, 152, 219, 0.1);
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
         }
 
-        /* Hamburger Animation */
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+
         .hamburger.active span:nth-child(1) {
             transform: rotate(-45deg) translate(-5px, 6px);
         }
@@ -277,7 +162,6 @@ footer {
             transform: rotate(45deg) translate(-5px, -6px);
         }
 
-
         /* Dropdown Menu Styles */
         .dropdown {
             position: relative;
@@ -288,27 +172,29 @@ footer {
             display: none;
             position: absolute;
             right: 0;
-            background-color: #f18724;
+            background-color: var(--nav-bg);
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             border-radius: 5px;
             z-index: 1001;
             top: 100%;
             margin-top: 5px;
+            transition: background-color 0.3s ease;
         }
 
         .dropdown-content a {
-            color: #ecf0f1 !important;
+            color: var(--nav-text) !important;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
             border-radius: 0;
             background-color: transparent !important;
+            transition: color 0.3s ease;
         }
 
         .dropdown-content a:hover {
-            background-color: #ffffff !important;
-            color: #f18724 !important;
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            color: var(--nav-hover) !important;
         }
 
         .dropdown:hover .dropdown-content {
@@ -336,22 +222,24 @@ footer {
         .section h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            color: #2c3e50;
-            border-bottom: 3px solid #f18724;
+            color: var(--heading-color);
+            border-bottom: 3px solid var(--border-accent);
             padding-bottom: 0.5rem;
-        } */
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
 
-        /*Intro Section */
-         #intro {
-            background-image: linear-gradient(rgba(241, 135, 36, 0.173), rgba(241, 135, 36, 0.8)), url('backdrop.jpeg');
+        /* Intro Section */
+        #intro {
+            background-image: linear-gradient(var(--intro-gradient), var(--intro-gradient)), url('backdrop.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             color: white;
             text-align: center;
-            padding: 6rem 2rem;
+            padding: 3rem 5rem;
             margin-top: -80px;
             padding-top: 10rem;
+            transition: background 0.3s ease;
         }
 
         #intro h1 {
@@ -365,18 +253,6 @@ footer {
             max-width: 600px;
             margin: 0 auto;
             opacity: 0.95;
-        }
-
-        #intro {
-            background-image: linear-gradient(rgba(241, 135, 36, 0), rgb(248, 120, 0)), url('backdrop.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-            text-align: center;
-            padding: 3rem 5rem;
-            margin-top: -80px;
-            padding-top: 10rem;
         }
 
         .intro-content {
@@ -401,18 +277,6 @@ footer {
             max-width: 600px;
         }
 
-        /* Responsive: stack on mobile */
-        @media (max-width: 768px) {
-            .intro-content {
-                flex-direction: column;
-            }
-            
-            .intro-image {
-                width: 300px;
-                height: 300px;
-            }
-        }
-
         /* Project Cards */
         .project-grid {
             display: grid;
@@ -422,11 +286,11 @@ footer {
         }
 
         .project-card {
-            background: white;
+            background: var(--card-bg);
             border-radius: 10px;
             padding: 2rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
 
         .project-card:hover {
@@ -435,14 +299,16 @@ footer {
         }
 
         .project-card h3 {
-            color: #2c3e50;
+            color: var(--heading-color);
             margin-bottom: 1rem;
             font-size: 1.3rem;
+            transition: color 0.3s ease;
         }
 
         .project-card p {
-            color: #666;
+            color: var(--text-color);
             margin-bottom: 1rem;
+            transition: color 0.3s ease;
         }
 
         .project-links {
@@ -451,7 +317,7 @@ footer {
         }
 
         .project-link {
-            background: #f18724;
+            background: var(--accent-color);
             color: white;
             padding: 0.5rem 1rem;
             text-decoration: none;
@@ -461,28 +327,35 @@ footer {
         }
 
         .project-link:hover {
-            background: #ff7b00;
+            background: var(--accent-hover);
         }
 
         /* Writing Section */
         .writing-item {
-            background: white;
+            background: var(--card-bg);
             border-radius: 10px;
             padding: 2rem;
             margin-bottom: 2rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             border-left: 4px solid #e74c3c;
+            transition: background-color 0.3s ease;
         }
 
         .writing-item h3 {
-            color: #2c3e50;
+            color: var(--heading-color);
             margin-bottom: 1rem;
+            transition: color 0.3s ease;
         }
 
         .writing-item .date {
             color: #7f8c8d;
             font-size: 0.9rem;
             margin-bottom: 1rem;
+        }
+
+        .writing-item p {
+            color: var(--text-color);
+            transition: color 0.3s ease;
         }
 
         /* Miscellaneous Section */
@@ -494,36 +367,72 @@ footer {
         }
 
         .misc-item {
-            background: white;
+            background: var(--card-bg);
             border-radius: 10px;
             padding: 1.5rem;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             border-top: 4px solid #f39c12;
+            transition: background-color 0.3s ease;
         }
 
         .misc-item h3 {
-            color: #2c3e50;
+            color: var(--heading-color);
             margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .misc-item p {
+            color: var(--text-color);
+            transition: color 0.3s ease;
         }
 
         /* Footer */
         footer {
-            background: #f18724;
+            background: var(--footer-bg);
             color: #ecf0f1;
             text-align: center;
             padding: 2rem 0;
             margin-top: 4rem;
+            transition: background-color 0.3s ease;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
             .nav-container {
                 padding: 0 1rem;
             }
 
             .nav-links {
+                position: fixed;
+                right: -100%;
+                top: 0;
+                height: 100vh;
+                width: 70%;
+                max-width: 300px;
+                background-color: var(--nav-bg);
+                flex-direction: column;
+                padding: 80px 2rem 2rem;
                 gap: 1rem;
+                transition: right 0.3s ease;
+                box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .intro-content {
+                flex-direction: column;
+            }
+            
+            .intro-image {
+                width: 300px;
+                height: 300px;
             }
 
             #intro h1 {
@@ -544,16 +453,16 @@ footer {
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
+            <a href="#intro" class="logo">Aidan Cooley</a>
 
             <!-- Hamburger Menu Button -->
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-            <a href="#intro" class="logo">Aidan Cooley</a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#intro">Home</a></li>
                 <li><a href="#coding">Coding</a></li>
                 <li><a href="#writing">Writing</a></li>
@@ -561,12 +470,12 @@ footer {
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="#" id="resume-link">Resume</a></li>
                 <li class="dropdown">
-                 <a href="#" id="external-link">Links</a>
-                <div class="dropdown-content">
-                <a href="https://www.linkedin.com/in/aidan-cooley-728b32247/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/notcooley" target="_blank">GitHub</a>
-                <a href="https://wasatchmag.com/staff_name/aidan-cooley/" target="_blank">Wasatch Magazine</a>
-                <a href="https://www.youtube.com/@aidancooley7991" target="_blank">YouTube Channel</a>
+                    <a href="#" id="external-link">Links</a>
+                    <div class="dropdown-content">
+                        <a href="https://www.linkedin.com/in/aidan-cooley-728b32247/" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/notcooley" target="_blank">GitHub</a>
+                        <a href="https://wasatchmag.com/staff_name/aidan-cooley/" target="_blank">Wasatch Magazine</a>
+                        <a href="https://www.youtube.com/@aidancooley7991" target="_blank">YouTube Channel</a>
                     </div>
                 </li>
                 <li>
@@ -584,14 +493,13 @@ footer {
         <section id="intro">
             <div class="intro-content">
                 <img src="standing.JPG" alt="Left image" class="intro-image">
-             <div class="intro-text">
-                 <h1>Aidan Cooley's Signs of Life</h1>
-                <p>I am a 4th year student at the University of Utah studying Computer Science and Applied Math. My fields of interest include algorithms, computer arcitechure, and embedded systems. My most recent work has focused on the Spacewire communication protocal and FPGAs.</p>
-
-        </div>
-        <img src="swa.jpeg" alt="Right image" class="intro-image">
-    </div>
-</section>
+                <div class="intro-text">
+                    <h1>Aidan Cooley's Signs of Life</h1>
+                    <p>I am a 4th year student at the University of Utah studying Computer Science and Applied Math. My fields of interest include algorithms, computer architecture, and embedded systems. My most recent work has focused on the Spacewire communication protocol and FPGAs.</p>
+                </div>
+                <img src="swa.jpeg" alt="Right image" class="intro-image">
+            </div>
+        </section>
 
         <!-- Coding Projects Section -->
         <section id="coding" class="section">
@@ -599,15 +507,15 @@ footer {
             <div class="project-grid">
                 <div class="project-card">
                     <h3>SpaceWire on the Raspberry Pi Pico</h3>
-                    <p>Spacewire brings huge benefits to onboard communication in satallites. But these benefits come at a high price tag. Are there cheaper means to test Spacewire, so we can save the most expensive components for flight? </p>
+                    <p>Spacewire brings huge benefits to onboard communication in satellites. But these benefits come at a high price tag. Are there cheaper means to test Spacewire, so we can save the most expensive components for flight?</p>
                     <p style="font-size: 0.8rem;">*code owned by LANL</p>
                     <div class="project-links">
-                          <a href="Spw_Raspi.pdf" class="project-link" target="_blank">View Summary</a>
+                        <a href="Spw_Raspi.pdf" class="project-link" target="_blank">View Summary</a>
                     </div>
                 </div>
                 <div class="project-card">
                     <h3>Debugging FPGAs Through a Software Slowdown</h3>
-                    <p>When there are many chips onboard a satallite, and many systems on each chip; debugging a single component is nearly impossible. I created a test suite for a Spacewire router on an FPGA allowing for custome data packets, scenarios, and logs for better debugging. All packaged into a user friendly shell </p>
+                    <p>When there are many chips onboard a satellite, and many systems on each chip; debugging a single component is nearly impossible. I created a test suite for a Spacewire router on an FPGA allowing for custom data packets, scenarios, and logs for better debugging. All packaged into a user friendly shell.</p>
                     <p style="font-size: 0.8rem;">*code owned by LANL</p>
                     <p style="font-size: 0.8rem;">*Summary Coming Soon!</p>
                     <div class="project-links">
@@ -615,7 +523,7 @@ footer {
                 </div>
                 <div class="project-card">
                     <h3>PlantPico</h3>
-                    <p>This was a toy project for a Christmas gift I made. It is a moisture sensor with a UI to evaluate plants' moisture, and if it was ready to be watered. It was good fun, and my first experience with coding microcontrollers in Python rather than C. It was also a good oppurtunity to use more components like LCDs, buttons, and sensors.</p>
+                    <p>This was a toy project for a Christmas gift I made. It is a moisture sensor with a UI to evaluate plants' moisture, and if it was ready to be watered. It was good fun, and my first experience with coding microcontrollers in Python rather than C. It was also a good opportunity to use more components like LCDs, buttons, and sensors.</p>
                     <div class="project-links">
                         <a href="https://github.com/notcooley/plantPico" class="project-link">GitHub</a>
                     </div>
@@ -629,19 +537,19 @@ footer {
             <div class="writing-item">
                 <h3>The Buzz Around Hogle Zoo</h3>
                 <div class="date">Published: Spring 2024</div>
-                <p>I had to oppurtunity to sit down with muralist Matt Whiley; an artist with work from DC to Bejing. He spoke to me of his mission, bees, and how we can learn from these little critters. </p>
+                <p>I had the opportunity to sit down with muralist Matt Whiley; an artist with work from DC to Beijing. He spoke to me of his mission, bees, and how we can learn from these little critters.</p>
                 <a href="https://wasatchmag.com/the-buzz-around-hogle-zoo/" class="project-link" target="_blank">Read More</a>
             </div>
             <div class="writing-item">
                 <h3>OpEd: Housing Development in Moab Threatens Locals, Wildlife, Ecosystem, and Recreation</h3>
                 <div class="date">Published: May 2024</div>
-                <p>Housing in Moab is already tight, tucked in between the beauty of two national parks, expansion can be dangerous to locals people and ecosystems. But Kane Creek is the target of a new, perhaps terrible housing project</p>
+                <p>Housing in Moab is already tight, tucked in between the beauty of two national parks, expansion can be dangerous to local people and ecosystems. But Kane Creek is the target of a new, perhaps terrible housing project.</p>
                 <a href="https://wasatchmag.com/oped-housing-development-in-moab-threatens-locals-wildlife-ecosystem-and-recreation/" class="project-link" target="_blank">Read More</a>
             </div>
             <div class="writing-item">
                 <h3>Dirtbag Gold Rush</h3>
                 <div class="date">Published: October 2025</div>
-                <p>Oftentimes worldclass climbing and tiny rural towns collide, this can have suprising consequences. How might the boom in traffic affect communities and the land? And what can we do to help?</p>
+                <p>Oftentimes worldclass climbing and tiny rural towns collide, this can have surprising consequences. How might the boom in traffic affect communities and the land? And what can we do to help?</p>
                 <a href="https://wasatchmag.com/dirtbag-gold-rush/" class="project-link">Read More</a>
             </div>
         </section>
@@ -653,18 +561,18 @@ footer {
                 <div class="misc-item">
                     <h3>Leadership/Volunteer Work</h3>
                     <p>BSA Eagle Scout, received July 2022</p>
-                    <p>Editor-in-Chief at Wasatch Magazine </p>
+                    <p>Editor-in-Chief at Wasatch Magazine</p>
                     <p>May 2025 - Present</p>
                     <p>Outdoor Trip Manager, Utah Climbing Team August 2023 - Present</p>
                 </div>
                 <div class="misc-item">
                     <h3>Non technical, just fun</h3>
-                    <p>I've been rock climbing since I was 10. I plan to do it till i'm 110. I am also an avid runner, kayaker, and snowboarder. Inside I like to play Magic the Gathering, make YouTube videos, and continue my goal of reading all 100 classics. </p>
+                    <p>I've been rock climbing since I was 10. I plan to do it till I'm 110. I am also an avid runner, kayaker, and snowboarder. Inside I like to play Magic the Gathering, make YouTube videos, and continue my goal of reading all 100 classics.</p>
                 </div>
                 <div class="misc-item">
                     <h3>Skills & Technologies</h3>
                     <p>Languages: C, VHDL, SystemVerilog, Python, SQL, QT, TCL, C++, C#, Java</p>
-                    <p>Agile team framework, experience in large teams and small. Most comforable in Emacs, VSCode, and Vivado</p>
+                    <p>Agile team framework, experience in large teams and small. Most comfortable in Emacs, VSCode, and Vivado</p>
                 </div>
             </div>
         </section>
@@ -672,10 +580,10 @@ footer {
 
     <!-- Footer -->
     <footer>
-        <p>Contact me anytime: 4idan.cooley@gmail.com </p>
+        <p>Contact me anytime: 4idan.cooley@gmail.com</p>
     </footer>
 
-<script>
+    <script>
         // Dark Mode Toggle
         const darkModeToggle = document.getElementById('darkModeToggle');
         const modeIcon = document.getElementById('modeIcon');
@@ -703,92 +611,84 @@ footer {
             }
         });
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Handle resume download
+        document.getElementById('resume-link').addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Handle resume download
-    document.getElementById('resume-link').addEventListener('click', function(e) {
-        e.preventDefault();
-        window.open('AidanResume.pdf', '_blank');
-    });
-   
-
-    // Add active nav link highlighting
-    window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-        
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.clientHeight;
-            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
+            window.open('AidanResume.pdf', '_blank');
         });
 
-        // Special handling for the last section (Misc)
-        if (sections.length > 0) {
-            const lastSection = sections[sections.length - 1];
-            const documentHeight = document.documentElement.scrollHeight;
-            const windowHeight = window.innerHeight;
-            const scrollPosition = window.pageYOffset;
+        // Add active nav link highlighting
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-            // If we're near the bottom of the page, highlight the last section
-            if (scrollPosition + windowHeight >= documentHeight - 50) {
-                current = lastSection.getAttribute('id');
+            // Special handling for the last section (Misc)
+            if (sections.length > 0) {
+                const lastSection = sections[sections.length - 1];
+                const documentHeight = document.documentElement.scrollHeight;
+                const windowHeight = window.innerHeight;
+                const scrollPosition = window.pageYOffset;
+
+                if (scrollPosition + windowHeight >= documentHeight - 50) {
+                    current = lastSection.getAttribute('id');
+                }
             }
-        }
-        // navLinks.forEach(link => {
-        //     link.style.color = '#ecf0f1';
-        //     if (link.getAttribute('href') === '#' + current) {
-        //         link.style.color = '#993300'; // Dark orange color
-        //     }
 
-        navLinks.forEach(link => {
+            navLinks.forEach(link => {
                 link.style.color = '';
                 if (link.getAttribute('href') === '#' + current) {
                     link.style.color = body.classList.contains('dark-mode') ? '#00ffff' : '#993300';
                 }
             });
         });
-    // Mobile Menu Toggle
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-});
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
 
-// Close menu when clicking on a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-    });
-});
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
 
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-    }
-});
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
 
-
-</script>
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
