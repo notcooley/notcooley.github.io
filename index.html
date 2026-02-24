@@ -25,6 +25,7 @@
             --card-bg: white;
             --border-accent: #f18724;
             --footer-bg: #f18724;
+            --shadow-clr: #e74c3c;
         }
 
         body.dark-mode {
@@ -41,6 +42,7 @@
             --card-bg: #2a3555;
             --border-accent: #0088ff;
             --footer-bg: #2c5aa0;
+            --shadow-clr: #0066ff;
         }
 
         body {
@@ -337,7 +339,7 @@
             padding: 2rem;
             margin-bottom: 2rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-left: 4px solid #e74c3c;
+            border-left: var(--shadow-clr);
             transition: background-color 0.3s ease;
         }
 
@@ -372,7 +374,7 @@
             padding: 1.5rem;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-top: 4px solid #f39c12;
+            border-top: var(--shadow-clr);
             transition: background-color 0.3s ease;
         }
 
