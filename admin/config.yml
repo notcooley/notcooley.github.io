@@ -1,8 +1,7 @@
 backend:
-  name: github
+  name: git-gateway
   repo: notcooley/notcooley.github.io
   branch: main
-  auth_endpoint: api/auth
 
 media_folder: /images
 public_folder: /images
