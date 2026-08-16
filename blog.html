@@ -12,21 +12,21 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #e1dcdc;
+            color: #e0e0e0;
+            background-color: #1a1f3a;
         }
 
         /* Navigation */
         nav {
-            background: #f18724;
+            background: #2c5aa0;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
         .nav-container {
@@ -52,7 +52,7 @@
         }
 
         .nav-links a {
-            color: #ecf0f1;
+            color: #a0d8f1;
             text-decoration: none;
             transition: color 0.3s ease;
             padding: 0.5rem 1rem;
@@ -60,8 +60,8 @@
         }
 
         .nav-links a:hover {
-            color: rgb(255, 255, 255);
-            background-color: rgba(52, 152, 219, 0.1);
+            color: #00ffff;
+            background-color: rgba(0, 136, 255, 0.15);
         }
 
         /* Main Content */
@@ -76,7 +76,7 @@
         .blog-header {
             text-align: center;
             padding: 3rem 0;
-            background-image: linear-gradient(rgba(241, 135, 36, 0), rgb(42, 51, 123)), url('stary.webp');
+            background-image: linear-gradient(rgba(30, 58, 138, 0.4), rgba(26, 31, 58, 0.9)), url('stary.webp');
             color: white;
             border-radius: 10px;
             margin-bottom: 3rem;
@@ -93,33 +93,33 @@
 
         /* Blog Posts */
         .blog-post {
-            background: white;
+            background: #2a3555;
             border-radius: 10px;
             padding: 2.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .blog-post:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 25px rgba(0,136,255,0.25);
         }
 
         .blog-post-header {
-            border-bottom: 2px solid #f18724;
+            border-bottom: 2px solid #0088ff;
             padding-bottom: 1rem;
             margin-bottom: 1.5rem;
         }
 
         .blog-post h2 {
-            color: #2c3e50;
+            color: #00d4ff;
             font-size: 2rem;
             margin-bottom: 0.5rem;
         }
 
         .blog-meta {
-            color: #7f8c8d;
+            color: #8fa8c4;
             font-size: 0.9rem;
             display: flex;
             gap: 1.5rem;
@@ -133,7 +133,7 @@
         }
 
         .blog-post-content {
-            color: #555;
+            color: #c8d3e0;
             line-height: 1.8;
             margin-bottom: 1.5rem;
         }
@@ -143,7 +143,7 @@
         }
 
         .read-more {
-            background: #f18724;
+            background: #0088ff;
             color: white;
             padding: 0.75rem 1.5rem;
             text-decoration: none;
@@ -153,7 +153,7 @@
         }
 
         .read-more:hover {
-            background: #ff7b00;
+            background: #00aaff;
         }
 
         .tags {
@@ -164,8 +164,8 @@
         }
 
         .tag {
-            background: #ecf0f1;
-            color: #2c3e50;
+            background: #1a1f3a;
+            color: #a0d8f1;
             padding: 0.3rem 0.8rem;
             border-radius: 15px;
             font-size: 0.85rem;
@@ -173,8 +173,8 @@
 
         /* Footer */
         footer {
-            background: #f18724;
-            color: #ecf0f1;
+            background: #2c5aa0;
+            color: #a0d8f1;
             text-align: center;
             padding: 2rem 0;
             margin-top: 4rem;
@@ -203,7 +203,6 @@
             <a href="index.html" class="logo">Aidan Cooley</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="resume.pdf" target="_blank">Resume</a></li>
                 <!-- <li class="dropdown">
                  <a href="#" id="external-link">Links</a>
                 <div class="dropdown-content">
